@@ -1,16 +1,15 @@
 <script setup>
-import { ref } from 'vue';
+import { useBaseStore } from '@/store/base';
 
-defineProps({
-  msg: String,
-});
+import { ref } from 'vue';
+const baseStore = useBaseStore();
 
 const count = ref(0);
 </script>
 
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1>{{ baseStore.msg }}</h1>
 
     <div class="card">
       <button type="button" @click="count++">count is {{ count }}</button>
